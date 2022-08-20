@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.mirkamol.food.ui.home.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home"/>
+    <fragment
+        android:id="@+id/historyFragment"
+        android:name="com.mirkamol.food.ui.history.HistoryFragment"
+        android:label="fragment_history"
+        tools:layout="@layout/fragment_history" />
+    <fragment
+        android:id="@+id/createFragment"
+        android:name="com.mirkamol.food.ui.create.CreateFragment"
+        android:label="fragment_category"
+        tools:layout="@layout/fragment_create" >
+        <action
+            android:id="@+id/action_createFragment_to_balanceFragment2"
+            app:destination="@id/balanceFragment2" />
+        <action
+            android:id="@+id/action_createFragment_to_menuDialogFragment"
+            app:destination="@id/menuDialogFragment" />
+    </fragment>
+
+    <dialog
+        android:id="@+id/menuDialogFragment"
+        android:name="com.mirkamol.food.utils.dialog.MenuDialogFragment"
+        android:label="fragment_menu_dialog"
+        tools:layout="@layout/fragment_menu_dialog">
+        <action
+            android:id="@+id/action_menuDialogFragment_to_addFoodFragment3"
+            app:destination="@id/addFoodFragment" />
+    </dialog>
+    <fragment
+        android:id="@+id/foodsFragment"
+        android:name="com.mirkamol.food.ui.foods.FoodsFragment"
+        android:label="fragment_foods"
+        tools:layout="@layout/fragment_foods" >
+        <action
+            android:id="@+id/action_foodsFragment_to_createFragment"
+            app:destination="@id/createFragment"
+            app:popUpTo="@id/main_graph" />
+    </fragment>
+    <fragment
+        android:id="@+id/addFoodFragment"
+        android:name="com.mirkamol.food.ui.addfood.AddFoodFragment"
+        android:label="fragment_add_food"
+        tools:layout="@layout/fragment_add_food" >
+        <action
+            android:id="@+id/action_addFoodFragment_to_createFragment2"
+            app:destination="@id/createFragment"
+            app:popUpTo="@id/homeFragment" />
+        <action
+            android:id="@+id/action_addFoodFragment_to_foodsFragment"
+            app:destination="@id/foodsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/balanceFragment2"
+        android:name="com.mirkamol.food.ui.balance.BalanceFragment"
+        android:label="BalanceFragment" />
+
+
+</navigation>

@@ -41,29 +41,37 @@
         android:id="@+id/foodsFragment"
         android:name="com.mirkamol.food.ui.foods.FoodsFragment"
         android:label="fragment_foods"
-        tools:layout="@layout/fragment_foods" >
-        <action
-            android:id="@+id/action_foodsFragment_to_createFragment"
-            app:destination="@id/createFragment"
-            app:popUpTo="@id/main_graph" />
-    </fragment>
+        tools:layout="@layout/fragment_foods" />
     <fragment
         android:id="@+id/addFoodFragment"
         android:name="com.mirkamol.food.ui.addfood.AddFoodFragment"
         android:label="fragment_add_food"
-        tools:layout="@layout/fragment_add_food" >
-        <action
-            android:id="@+id/action_addFoodFragment_to_createFragment2"
-            app:destination="@id/createFragment"
-            app:popUpTo="@id/homeFragment" />
-        <action
-            android:id="@+id/action_addFoodFragment_to_foodsFragment"
-            app:destination="@id/foodsFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_add_food" />
     <fragment
         android:id="@+id/balanceFragment2"
         android:name="com.mirkamol.food.ui.balance.BalanceFragment"
         android:label="BalanceFragment" />
-
+    <action
+        android:id="@+id/action_addFoodFragment_to_createFragment2"
+        app:destination="@id/createFragment"
+        app:popUpTo="@id/homeFragment" />
+    <action
+        android:id="@+id/action_addFoodFragment_to_foodsFragment"
+        app:destination="@id/foodsFragment" />
+    <fragment
+        android:id="@+id/calculatorFragment"
+        android:name="com.mirkamol.food.ui.calculator.CalculatorFragment1"
+        android:label="fragment_calculator"
+        tools:layout="@layout/fragment_calculator1" />
+    <fragment
+        android:id="@+id/calculatorFragment2"
+        android:name="com.mirkamol.food.ui.calculator.CalculatorFragment2"
+        android:label="fragment_calculator2"
+        tools:layout="@layout/fragment_calculator2" />
+    <fragment
+        android:id="@+id/calculatorFragment3"
+        android:name="com.mirkamol.food.ui.calculator.CalculatorFragment3"
+        android:label="fragment_calculator3"
+        tools:layout="@layout/fragment_calculator3" />
 
 </navigation>

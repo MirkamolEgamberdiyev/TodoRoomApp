@@ -90,4 +90,10 @@
     <color name="green_default">#ff02c65c</color>
     <color name="gray_fa">#FAFAFA</color>
     <color name="gray_e5">#E5E5E5</color>
+
+
+    <color name="blac_shade_1">#292D36</color>
+    <color name="black_shade_2">#272B33</color>
+    <color name="black_shade_3">#22252D</color>
+    <color name="yellow">#ffa500</color>
 </resources>

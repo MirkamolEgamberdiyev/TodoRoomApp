@@ -14,25 +14,14 @@ class CreateAdapter : ListAdapter<Food, CreateAdapter.Vh>(MyDiffUtil()) {
         private var binding: CreateItemBinding
     ) :
         RecyclerView.ViewHolder(binding.root) {
-
         fun onBind(food: Food) {
             binding.apply {
-                nameTxt.text = "Kafe name:  " + food.kafeName
                 foodNameTxt.text = "Food name:  " + food.foodName
                 qualityTxt.text = "Food quantity:  " + food.quantity
                 priceTxt.text = "Food price:  " + food.price + " sum"
-                countTxt.text = "Person number:  " + food.countPerson + " ta"
-                val person = food.countPerson.toInt()
-                val price = food.price.toInt()
-                val totalSum = person*price
-                Log.d("TAG", "onBindawdawdawdawd $person, $price, $totalSum")
-                tvSum.text = "Xisob:  $totalSum"
-
-
             }
         }
     }
-
     class MyDiffUtil : DiffUtil.ItemCallback<Food>() {
         override fun areItemsTheSame(oldItem: Food, newItem: Food): Boolean {
             return oldItem.id == newItem.id

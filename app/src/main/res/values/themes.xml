@@ -20,4 +20,24 @@
     <style name="circle">
         <item name="cornerSize">50%</item>
     </style>
+
+    <style name="MyDialogStyle" parent="@android:style/Theme.Light.NoTitleBar.Fullscreen">
+        <item name="windowNoTitle">true</item>
+    </style>
+    <style name="CustomDialog" parent="Theme.MaterialComponents.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
+
+    <style name="CalculateButtonStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:backgroundTint">@color/black_shade_2</item>
+       <item name="android:layout_margin">3dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:padding">6dp</item>
+        <item name="textAllCaps">false</item>
+        <item name="android:textColor">#ffa500</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+
 </resources>

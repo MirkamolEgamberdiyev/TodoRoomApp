@@ -132,6 +132,18 @@
                 android:textSize="16sp"
                 android:layout_marginHorizontal="16dp"
                android:layout_marginVertical="12dp"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_calculate"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginVertical="12dp"
+                android:background="@drawable/edt_background"
+                android:fontFamily="@font/poppins_bold"
+                android:text="Kalkulator"
+                android:textAllCaps="false"
+                android:textSize="16sp" />
         </androidx.appcompat.widget.LinearLayoutCompat>
 
 

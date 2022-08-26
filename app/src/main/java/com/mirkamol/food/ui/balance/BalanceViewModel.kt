@@ -10,7 +10,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class BalanceViewModel @Inject constructor(private val repository: MainRepository):ViewModel() {
-    fun addFood(food: HistoryModel) = viewModelScope.launch {
+    fun addFoodHistory(food: HistoryModel) = viewModelScope.launch {
         repository.addFood(food)
     }
 }

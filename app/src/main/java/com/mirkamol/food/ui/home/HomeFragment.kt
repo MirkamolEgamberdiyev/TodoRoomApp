@@ -24,10 +24,6 @@ class HomeFragment : BaseFragment(R.layout.fragment_home) {
         initViews()
         setupUI()
         adapterClickManager()
-
-        requireActivity().onBackPressedDispatcher.addCallback(this) {
-            requireActivity().finish()
-        }
     }
 
     private fun adapterClickManager() {

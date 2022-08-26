@@ -10,7 +10,7 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.mirkamol.food.data.local.entity.Category
 import com.mirkamol.food.databinding.ItemCategoryBinding
 
-class CategoryAdapter(): RecyclerView.Adapter<CategoryAdapter.VH>() {
+class CategoryAdapter: RecyclerView.Adapter<CategoryAdapter.VH>() {
 
     private val dif = AsyncListDiffer(this, ITEM_DIFF)
     private var onClick: ((Category) -> Unit)? = null
@@ -43,7 +43,6 @@ class CategoryAdapter(): RecyclerView.Adapter<CategoryAdapter.VH>() {
     fun submitList(list: List<Category>) {
         dif.submitList(list)
     }
-
     fun onClick(category: (Category) -> Unit) {
         onClick = category
     }

@@ -14,14 +14,8 @@ class HistoryViewModel @Inject constructor(
     private val repository: MainRepository
 ) : ViewModel() {
 
-    fun getAllFood(): LiveData<List<HistoryModel>> {
-        return repository.getAllFood()
-    }
-    fun deleteFood(food: HistoryModel) = viewModelScope.launch {
-        repository.deleteFood(food)
+    fun getFoodHistory(): LiveData<List<HistoryModel>> {
+        return repository.getFoodHistory()
     }
 
-    fun deleteAllFood() = viewModelScope.launch {
-        repository.deleteAllFood()
-    }
 }

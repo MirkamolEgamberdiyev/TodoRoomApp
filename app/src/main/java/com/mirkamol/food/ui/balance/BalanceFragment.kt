@@ -67,7 +67,7 @@ class BalanceFragment : BaseFragment(R.layout.fragment_balance) {
             && foodName != null
             && quantity != null
             && price != null) {
-            viewModel.addFood(
+            viewModel.addFoodHistory(
                 HistoryModel(
                     name = kafeName!!,
                     count = countPerson!!,

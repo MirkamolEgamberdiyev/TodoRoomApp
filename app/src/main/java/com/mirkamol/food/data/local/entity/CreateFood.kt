@@ -3,8 +3,8 @@ package com.mirkamol.food.data.local.entity
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
-@Entity(tableName = "foods")
-data class Food(
+@Entity(tableName = "createFoods")
+data class CreateFood(
     @PrimaryKey(autoGenerate = true)
     val id:Int? = null,
     var foodName: String,

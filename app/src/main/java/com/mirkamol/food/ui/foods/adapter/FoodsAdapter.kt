@@ -5,47 +5,41 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.mirkamol.food.data.local.entity.Food
-import com.mirkamol.food.data.local.entity.HistoryModel
-import com.mirkamol.food.databinding.HistoryItemBinding
+import com.mirkamol.food.data.local.entity.CreateFood
+import com.mirkamol.food.databinding.ItemFoodsBinding
 
-class FoodsAdapter : ListAdapter<Food, FoodsAdapter.Vh>(MyDiffUtil()) {
-    lateinit var itemCLick: ((Food) -> Unit)
+class FoodsAdapter(private val itemCLick: (CreateFood) -> Unit) : ListAdapter<CreateFood, FoodsAdapter.Vh>(MyDiffUtil()) {
 
     inner class Vh(
-        private var itemHistoryBinding: HistoryItemBinding
+        private var itemHistoryBinding: ItemFoodsBinding
     ) :
         RecyclerView.ViewHolder(itemHistoryBinding.root) {
 
-        fun onBind(food: Food) {
+        fun onBind(food: CreateFood) {
             itemHistoryBinding.apply {
                 tvName.text = "foodname:  "+food.foodName
                 tvQuantity.text = "food quantity:  "+food.quantity
                 tvPrice.text = "food price:  "+food.price
-                tvKfName.text = "kafeName:   "+food.kafeName
-                tvCount.text = "countPerson:   "+food.countPerson
-
                 itemHistoryBinding.itemCard.setOnClickListener {
                     itemCLick.invoke(food)
                 }
             }
         }
     }
-
-    class MyDiffUtil : DiffUtil.ItemCallback<Food>() {
-        override fun areItemsTheSame(oldItem: Food, newItem: Food): Boolean {
+    class MyDiffUtil : DiffUtil.ItemCallback<CreateFood>() {
+        override fun areItemsTheSame(oldItem: CreateFood, newItem: CreateFood): Boolean {
             return oldItem.id == newItem.id
         }
 
-        override fun areContentsTheSame(oldItem: Food, newItem: Food): Boolean {
-            return oldItem.foodName == newItem.foodName
+        override fun areContentsTheSame(oldItem: CreateFood, newItem: CreateFood): Boolean {
+            return oldItem == newItem
         }
 
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Vh {
         return Vh(
-            HistoryItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+            ItemFoodsBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         )
     }
 

@@ -29,7 +29,7 @@ class HistoryFragment : BaseFragment(R.layout.fragment_history) {
     }
 
     private fun loadRecourse() {
-        viewModel.getAllFood().observe(viewLifecycleOwner) {
+        viewModel.getFoodHistory().observe(viewLifecycleOwner) {
             adapter.submitList(it)
         }
     }

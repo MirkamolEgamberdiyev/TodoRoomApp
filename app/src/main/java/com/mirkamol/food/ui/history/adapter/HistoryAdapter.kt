@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.mirkamol.food.data.local.entity.HistoryModel
 import com.mirkamol.food.databinding.HistoryItemBinding
 
-class HistoryAdapter() : ListAdapter<HistoryModel,
+class HistoryAdapter : ListAdapter<HistoryModel,
         HistoryAdapter.Vh>(MyDiffUtil()) {
     inner class Vh(
         private var itemHistoryBinding: HistoryItemBinding
@@ -17,18 +17,14 @@ class HistoryAdapter() : ListAdapter<HistoryModel,
 
         fun onBind(food: HistoryModel) {
             itemHistoryBinding.apply {
-                tvName.text = food.foodName
-                tvQuantity.text = food.quantity
-                tvPrice.text =food.price
+                tvName.text = "Food Name : " + food.foodName
+                tvQuantity.text = "Quantity : " + food.quantity
+                tvPrice.text ="Price : " + food.price
                 tvKfName.text = "kafeName:  " + food.name
                 tvCount.text = "countPerson:   " + food.count + " ta"
-
-
-
             }
         }
     }
-
     class MyDiffUtil : DiffUtil.ItemCallback<HistoryModel>() {
         override fun areItemsTheSame(oldItem: HistoryModel, newItem: HistoryModel): Boolean {
             return oldItem.id == newItem.id
@@ -39,13 +35,11 @@ class HistoryAdapter() : ListAdapter<HistoryModel,
         }
 
     }
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Vh {
         return Vh(
             HistoryItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         )
     }
-
     override fun onBindViewHolder(holder: Vh, position: Int) {
         holder.onBind(getItem(position))
     }
